@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2D Platformer Game</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div id="game-container">
+        <canvas id="game-canvas"></canvas>
+        
+        <div id="main-menu" class="screen">
+            <h1>2D Platformer</h1>
+            <button id="play-button">Play</button>
+            <button id="instructions-button">Instructions</button>
+            <button id="settings-button">Settings</button>
+        </div>
+        
+        <div id="instructions-screen" class="screen hidden">
+            <h2>How to Play</h2>
+            <p>Use arrow keys or WASD to move and jump</p>
+            <p>Collect coins to increase your score</p>
+            <p>Avoid hazards and reach the goal to complete each level</p>
+            <button class="back-button">Back</button>
+        </div>
+        
+        <div id="settings-screen" class="screen hidden">
+            <h2>Settings</h2>
+            <div class="setting">
+                <label for="sound-toggle">Sound:</label>
+                <input type="checkbox" id="sound-toggle" checked>
+            </div>
+            <button class="back-button">Back</button>
+        </div>
+        
+        <div id="game-ui" class="hidden">
+            <div id="score">Score: <span id="score-value">0</span></div>
+            <div id="lives">Lives: <span id="lives-value">10</span></div>
+            <div id="level">Level: <span id="level-value">1</span></div>
+            <div id="timer">Time: <span id="timer-value">0</span></div>
+        </div>
+        
+        <div id="level-complete" class="screen hidden">
+            <h2>Level Complete!</h2>
+            <div>Score: <span class="final-score"></span></div>
+            <div>Time: <span class="final-time"></span></div>
+            <button id="next-level-button">Next Level</button>
+        </div>
+        
+        <div id="game-over" class="screen hidden">
+            <h2>Game Over</h2>
+            <div>Final Score: <span class="final-score"></span></div>
+            <button id="restart-button">Play Again</button>
+            <button id="main-menu-button">Main Menu</button>
+        </div>
+        
+        <!-- Mobile touch controls, hidden by default on desktop -->
+        <div id="mobile-controls">
+            <div class="control-btn" id="control-left">◀</div>
+            <div class="control-btn" id="control-jump">▲</div>
+            <div class="control-btn" id="control-right">▶</div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/physics.js"></script>
+    <script src="js/player.js"></script>
+    <script src="js/levels.js"></script>
+    <script src="js/controls.js"></script>
+    <script src="js/rendering.js"></script>
+    <script src="js/audio.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/game.js"></script>
+</body>
+</html> 
